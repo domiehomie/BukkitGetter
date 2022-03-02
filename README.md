@@ -2,6 +2,19 @@
 
 A simple Ktor-based HTTP server to automatically get the latest spigot build. It does this by running BuildTools on an hourly basis.
 
+## Endpoints
+### `GET` /
+Returns the current API version.
+
+### `GET` /spigot
+Returns the default spigot jar.
+
+### `GET` /spigot/api
+Returns the spigot api jar.
+
+### `GET` /spigot/server
+Returns the spigot server jar.
+
 ## Setting up
 ### Building yourself
 ```shell
