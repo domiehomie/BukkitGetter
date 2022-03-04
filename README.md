@@ -15,6 +15,8 @@ Returns the spigot api jar.
 ### `GET` /spigot/server
 Returns the spigot server jar.
 
+**IMPORTANT**: You can use the &version=x parameter to download any other version. **THIS VERSION WILL HAVE TO BE MANUALLY DOWNLOADED USING THE ``-rev x`` FLAG.
+
 ## Setting up
 ### Building yourself
 ```shell
