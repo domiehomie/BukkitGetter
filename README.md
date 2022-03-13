@@ -39,4 +39,4 @@ $ java -jar bukkitgetter-1.0.jar
 ```
 
 ### Docker
-*Coming soon.*
+https://hub.docker.com/r/mufinlive/bukkit-getter
