@@ -77,13 +77,8 @@ fun downloadAndRunBuildtools() {
         line = reader.readLine()
     }
 
-    val status = process.waitFor();
-    LOGGER.info("Buildtools run exit code: $status");
-
-    if(status != 0)
-        LOGGER.info(output.toString())
-
-    if(status != 0) print(output.toString())
+    if(System.getenv("EXTRA_LOGGING").lowercase() == "true")
+        print(output.toString())
 
 }
 
