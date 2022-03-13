@@ -26,8 +26,13 @@ const val DEFAULT_VERSION = "1.18.1-R0.1-SNAPSHOT"
 val FILE_NAME = "${System.getProperty("user.dir")}/buildtools/BuildTools.jar";
 val LOGGER: Logger = LoggerFactory.getLogger("bukkitgetter")
 
-fun main() {
-    embeddedServer(Netty, port = 8080) {
+fun main(args: Array<String>) {
+    var port = 8080;
+
+    if(args.isNotEmpty())
+        port = args[0].toInt()
+
+    embeddedServer(Netty, port = port) {
         configureRouting()
         configureSerialization()
         registerCustomRoutes()
