@@ -29,7 +29,7 @@ jobs:
       uses: docker/setup-buildx-action@v1
 
     - name: log in
-      run: docker login -u mufinlie -p ${{ secrets.DOCKER_ACCESS_TOKEN }}
+      run: docker login -u mufinlive -p ${{ secrets.DOCKER_ACCESS_TOKEN }}
       
     - name: Build and push
       id: docker_build
