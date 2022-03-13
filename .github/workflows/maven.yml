@@ -1,7 +1,4 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
-name: Java CI with Maven
+name: CI (Publish artifact, build and push to docker)
 
 on:
   push:
@@ -24,6 +21,5 @@ jobs:
       run: mvn -B package --file pom.xml
     - uses: actions/upload-artifact@v3
       with:
-        name: bukkitgetter-artifact
-        path: target/*.jar  
-      
+        name: bukkitgetter
+        path: target/*-with-dependencies.jar
