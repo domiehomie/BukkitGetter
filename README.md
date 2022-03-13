@@ -38,5 +38,13 @@ $ java -jar bukkitgetter-1.0-jar-with-dependencies.jar
 $ java -jar bukkitgetter-1.0.jar
 ```
 
+### Prereleases
+1. Download [the latest CI build](https://nightly.link/mufinlive/BukkitGetter/workflows/ci/master/bukkitgetter.zip).
+2. Unzip the file and place the .jar file in a directory of your choice (prefferably empty).
+3. Open a terminal/command prompt in that directory and run the following command.
+```shell
+$ java -jar bukkitgetter-1.0.jar
+```
+
 ### Docker
 https://hub.docker.com/r/mufinlive/bukkit-getter
