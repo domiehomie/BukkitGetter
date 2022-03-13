@@ -77,8 +77,7 @@ fun downloadAndRunBuildtools() {
         line = reader.readLine()
     }
 
-    if(System.getenv("EXTRA_LOGGING").lowercase() == "true")
-        print(output.toString())
+    print(output.toString())
 
 }
 
