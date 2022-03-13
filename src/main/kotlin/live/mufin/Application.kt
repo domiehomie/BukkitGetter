@@ -67,7 +67,7 @@ fun downloadAndRunBuildtools() {
     val file = Files.copy(inp, Paths.get(FILE_NAME), StandardCopyOption.REPLACE_EXISTING)
     LOGGER.info("Buildtools downloaded.")
 
-    val process = Runtime.getRuntime().exec("java -jar ./buildtools/BuildTools.jar");
+    val process = Runtime.getRuntime().exec("java -Xmx512M -jar ./buildtools/BuildTools.jar");
     val reader = BufferedReader(InputStreamReader(process.inputStream))
     val output = StringBuilder()
 
