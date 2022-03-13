@@ -4,6 +4,7 @@ import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
+import io.ktor.server.plugins.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import live.mufin.plugins.configureRouting
@@ -31,6 +32,16 @@ fun main() {
         configureSerialization()
         registerCustomRoutes()
 
+        routing {
+            install(StatusPages) {
+                exception<IllegalStateException> { call, _ ->
+                    call.respond(HttpStatusCode.InternalServerError)
+                }
+                exception<Exception> { call, _ ->
+                    call.respond(HttpStatusCode.InternalServerError)
+                }
+            }
+        }
 
         File("${System.getProperty("user.dir")}/buildtools").mkdir();
 
@@ -63,6 +74,9 @@ fun downloadAndRunBuildtools() {
 
     val status = process.waitFor();
     LOGGER.info("Buildtools run exit code: $status");
+
+    if(status != 0)
+        LOGGER.info(output.toString())
 
     if(status != 0) print(output.toString())
 
